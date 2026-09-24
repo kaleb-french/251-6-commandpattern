@@ -1,5 +1,11 @@
 public class Main {
     static void main() {
-        System.out.println("Hello World!");
+        TextEditor editor = new TextEditor();
+        InsertCommand command = new InsertCommand(editor, "Hello", 0);
+        EditorApp app = new EditorApp();
+
+        app.executeCommand(command);
+
+        System.out.println(editor.getText());
     }
 }
