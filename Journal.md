@@ -6,3 +6,6 @@ The editor app has no direct reference set in the EditorApp class, to the comman
 
 Phase 2-
 Having the command object responsible for the logic makes the editor class simpler, because it doesn't need to know how to do the undo or execute it just tells the command object to do it and the command object takes care of the rest.
+
+Phase 3-
+A stack is resolved in a FILO order or First In Last Out. This is ideal for an undo history due to the fact the last action preformed would be the first to be retrieved from the stack. The queue retrieves them in the order they were placed in queue which in an undo pattern would give you the first action preformed not the last one. 

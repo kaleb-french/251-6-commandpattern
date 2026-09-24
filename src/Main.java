@@ -1,15 +1,24 @@
 public class Main {
     static void main() {
         TextEditor editor = new TextEditor();
-        InsertCommand command = new InsertCommand(editor, "Hello", 0);
         EditorApp app = new EditorApp();
 
-        app.executeCommand(command);
+        Command command1 = new InsertCommand(editor, "Hello", 0);
+        Command command2 = new InsertCommand(editor, " World", 5);
+        Command command3 = new InsertCommand(editor, "!", 11);
 
+        app.executeCommand(command1);
+        System.out.println(editor.getText());
+        app.executeCommand(command2);
+        System.out.println(editor.getText());
+        app.executeCommand(command3);
         System.out.println(editor.getText());
 
-        app.undoCommand(command);
-
+        app.undoCommand();
+        System.out.println(editor.getText());
+        app.undoCommand();
+        System.out.println(editor.getText());
+        app.undoCommand();
         System.out.println(editor.getText());
     }
 }
