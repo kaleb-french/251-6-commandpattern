@@ -1,16 +1,14 @@
-import java.util.Stack;
-public class EditorApp{
-    private Stack<Command> commandHistory = new Stack<>();
 
-    public void executeCommand(Command command){
-        command.execute();
-        commandHistory.push(command);
+public class EditorApp{
+    private MacroCommand macro = new MacroCommand();
+
+    public void queueCommand(Command command){
+        macro.addCommand(command);
+    }
+    public void executeCommands(){
+        macro.execute();
     }
     public void undoCommand(){
-        if(!commandHistory.isEmpty()){
-            Command command = commandHistory.pop();
-            command.undo();
-        }
-
+        macro.undo();
     }
 }

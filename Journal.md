@@ -12,3 +12,6 @@ A stack is resolved in a FILO order or First In Last Out. This is ideal for an u
 
 Phase 4-
 The delete operation is much more permenant if state isn't captured. While the insert operation just needs the start and end point of the last text insert to undo, the delete command needs the entire text thats being deleted to restore.
+
+Phase 5-
+It is an example of composition by breaking up a larger operation into smaller chunks. This allows you to make small adjustments easier without alot of problems.
