@@ -14,4 +14,9 @@ public class InsertCommand implements Command{
     public void execute(){
         editor.insert(text, position);
     }
+
+	@Override
+	public void undo() {
+	    editor.remove(position, text.length());
+	}
 }

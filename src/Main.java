@@ -7,5 +7,9 @@ public class Main {
         app.executeCommand(command);
 
         System.out.println(editor.getText());
+
+        app.undoCommand(command);
+
+        System.out.println(editor.getText());
     }
 }
