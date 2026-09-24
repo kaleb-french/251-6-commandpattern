@@ -14,10 +14,11 @@ public class Main {
         app.executeCommand(command3);
         System.out.println(editor.getText());
 
-        app.undoCommand();
+        Command delete = new DeleteCommand(editor, 6, 5);
+
+        app.executeCommand(delete);
         System.out.println(editor.getText());
-        app.undoCommand();
-        System.out.println(editor.getText());
+
         app.undoCommand();
         System.out.println(editor.getText());
     }
